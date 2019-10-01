@@ -39,7 +39,7 @@
 <!--    <bean id="movie" class="com.stackroute.domain.Movie" scope="prototype">-->
 <!--    </bean>-->
 
-    <bean id="movie" class="com.stackroute.domain.Movie" scope="prototype">
+    <bean id="movie" class="com.stackroute.domain.Movie">
         <constructor-arg name="actor" ref="actorObject3" />
     </bean>
 </beans>
