@@ -6,13 +6,35 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="actorObject" class="com.stackroute.domain.Actor">
-        <property name="name" value="Mahesh Babu"/>
-        <property name="gender" value="Male"/>
-        <property name="age" value="45"/>
+<!--    <bean id="actorObject" class="com.stackroute.domain.Actor">-->
+<!--        <property name="name" value="Mahesh Babu"/>-->
+<!--        <property name="gender" value="Male"/>-->
+<!--        <property name="age" value="45"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="movie" class="com.stackroute.domain.Movie">-->
+<!--        <property name="actor" ref="actorObject"/>-->
+<!--    </bean>-->
+
+    <bean id="actorObject1" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="Mahesh babu" type="java.lang.String" />
+        <constructor-arg name="gender" value="Male" type="java.lang.String" />
+        <constructor-arg name="age" value="45" type="int"/>
     </bean>
 
-    <bean id="movie" class="com.stackroute.domain.Movie">
-        <property name="actor" ref="actorObject"/>
+    <bean id="actorObject2" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="Allu Arjun" type="java.lang.String" />
+        <constructor-arg name="gender" value="Male" type="java.lang.String" />
+        <constructor-arg name="age" value="37" type="int"/>
+    </bean>
+
+    <bean id="actorObject3" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="Rakul" type="java.lang.String" />
+        <constructor-arg name="gender" value="Female" type="java.lang.String" />
+        <constructor-arg name="age" value="33" type="int"/>
+    </bean>
+
+    <bean name="movieA,movieB" class="com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor" ref="actorObject1" />
     </bean>
 </beans>
