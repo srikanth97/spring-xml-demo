@@ -6,6 +6,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:annotation-config/>
+
 <!--    <bean id="actorObject" class="com.stackroute.domain.Actor">-->
 <!--        <property name="name" value="Mahesh Babu"/>-->
 <!--        <property name="gender" value="Male"/>-->
@@ -34,7 +36,10 @@
         <constructor-arg name="age" value="33" type="int"/>
     </bean>
 
-    <bean name="movieA,movieB" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor" ref="actorObject1" />
+<!--    <bean id="movie" class="com.stackroute.domain.Movie" scope="prototype">-->
+<!--    </bean>-->
+
+    <bean id="movie" class="com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor" ref="actorObject3" />
     </bean>
 </beans>
